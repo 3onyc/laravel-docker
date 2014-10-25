@@ -1,3 +1,54 @@
+## Laravel Docker
+
+**NOTE** Only works if Docker is running on the same host.
+
+### Software used
+
+* [HHVM](http://hhvm.com/)
+* [NGINX](http://nginx.org/)
+* [runit](http://smarden.org/runit/)
+
+### Quickstart (For development)
+
+1. Create a project using composer
+   `composer create-project 3onyc/laravel-docker <name>`
+
+2. Copy `Makefile.example` to `Makefile`
+
+3. Configure the `Makefile` to your liking:
+
+```
+# Port on host to listen on
+PORT=8080
+# App name, used in docker image name
+APP=laravel
+# Used in docker image name <VENDOR>>/<APP>-prod
+VENDOR=acme
+# User in Dockerfile
+MAINTAINER=Foo <foo@acme.tld>
+# Name for the `make run` docker container
+CONTAINER=$(VENDOR)-$(APP)-web
+# your UID on the host, nginx/hhvm will run as this UID so they can read/write files.
+UID=1000
+```
+
+4. Execute `make run` and wait until it's completed
+
+5. Navigate to `http://localhost:<PORT>` (Default port: 8080) in your browser
+
+6. The Laravel 'You have arrived' page should now display, you can edit the application as
+   you would normally. Logs from the container are available in `app/storage/logs/dev`
+
+### Todo
+
+1. Figure out way to skip `composer install` when building for dev (a base image for both?)
+2. Look at alternatives to Makefile (artisan commands?)
+3. Linking to database/other containers (sounds like this could be neatly integrated using artisan or at least PHP)
+
+### Contributing
+
+Pull requests, bug reports and suggestions are welcome, use GitHub's built-in features.
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)

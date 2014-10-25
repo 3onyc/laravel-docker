@@ -1,0 +1,12 @@
+FROM __VENDOR__/__APP__-prod
+MAINTAINER __MAINTAINER__
+
+# Set user to 1000 so we can map it to logged in user
+RUN useradd -d /var/www -u __UID__ www && \
+    sed -i 's/www-data/www/g' /etc/nginx/nginx.conf && \
+    sed -i 's/www-data/www/g' /etc/service/hhvm/run && \
+    chown -R www:www \
+        /var/run/hhvm \
+        /var/log/hhvm \
+        /var/log/nginx \
+        /var/www
