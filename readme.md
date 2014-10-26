@@ -2,6 +2,8 @@
 
 **NOTE** Only works if Docker is running on the same host.
 
+*Currently working on a replacement, but feel free to use this*
+
 ### Software used
 
 * [HHVM](http://hhvm.com/)
