@@ -11,6 +11,7 @@ RUN php -r 'readfile("https://getcomposer.org/installer");' | php -- --install-d
     chmod +x /usr/bin/composer
 
 ADD . /var/www/
+ADD app/resources/docker/nginx-hhvm.conf /etc/nginx/nginx.conf
 
 RUN cd /var/www/ && \
     composer update && \
