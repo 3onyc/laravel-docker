@@ -1,6 +1,6 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
+	"name": "3onyc/laravel-docker",
+	"description": "The Laravel Framework, with Docker.",
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
