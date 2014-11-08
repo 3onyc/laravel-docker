@@ -2,7 +2,7 @@
 
 **NOTE** Only works if Docker is running on the same host.
 
-*Currently working on a replacement, but feel free to use this*
+*This repository has been superseded by [laravel-shipper](https://github.com/3onyc/laravel-shipper)*
 
 ### Software used
 
